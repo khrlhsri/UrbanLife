@@ -187,10 +187,7 @@ public class Nature extends Pane{
 		
 		grpCB3.getChildren().addAll(cloudBack3); // Group cloudBack1 shape/properties
 		
-		this.getChildren().addAll(grpCB1, grpCB2, grpCB3, hill, grpCF1, grpCF2, grpCF3);
-		
-//	ANIMATE CLOUD
-		
+//ANIMATE CLOUD
 		Timeline animateCloudFront1_2_3 = new Timeline(new KeyFrame(Duration.millis(70), e -> {
 			grpCF1.setLayoutX(grpCF1.getLayoutX() + 1.5);
 				if (grpCF1.getLayoutX() > 800) {
@@ -236,5 +233,7 @@ public class Nature extends Pane{
 		
 		animateCloudBack1_2_3.setCycleCount(Timeline.INDEFINITE);
 		animateCloudBack1_2_3.play();
+		
+		this.getChildren().addAll(grpCB1, grpCB2, grpCB3, hill, grpCF1, grpCF2, grpCF3);
 	}
 }

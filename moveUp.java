@@ -6,10 +6,7 @@ import javafx.animation.TranslateTransition;
 import javafx.scene.Group;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
-import javafx.scene.shape.Polygon;
-import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.*;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
@@ -18,8 +15,8 @@ public class moveUp extends Pane{
 	Color skinColour = Color.rgb(255, 238, 214);
 	Color characterStroke = Color.rgb(110, 104, 89);
 	
-	//A being pressed 
 	Circle W_head;
+	Ellipse GarbageBagU;
 	Line W_maskLine, W_vestLine1, W_vestLine2;
 	Rectangle W_capFrontPanel, W_hair, W_body, 
 				W_LeftHand, W_LeftShirtSleeve,
@@ -77,33 +74,33 @@ public class moveUp extends Pane{
 		W_grpBody.getChildren().addAll(W_body, W_vestLine1, W_vestLine2);
 		
 //------Drawing Hand--------------------------------------------------------------
-		//--Right shirt sleeve--
-		W_RightShirtSleeve = new Rectangle(5, 676, 5, 10);
-		W_RightShirtSleeve.setFill(Color.rgb(148, 240, 117));
-		W_RightShirtSleeve.setStroke(Color.rgb(102, 102, 102));
-		W_RightShirtSleeve.setStrokeWidth(0.5);
-				
-		//--Right Hand--
-		W_RightHand = new Rectangle(5, 684, 5, 10);
-		W_RightHand.setFill(skinColour);
-		W_RightHand.setStroke(characterStroke);
-		W_RightHand.setStrokeWidth(0.5);
-				
-		W_grpRHand.getChildren().addAll(W_RightHand, W_RightShirtSleeve);
-				
 		//--Left shirt sleeve--
-		W_LeftShirtSleeve = new Rectangle(30, 676, 5, 10);
+		W_LeftShirtSleeve = new Rectangle(5, 676, 5, 10);
 		W_LeftShirtSleeve.setFill(Color.rgb(148, 240, 117));
-		W_LeftShirtSleeve.setStroke(characterStroke);
+		W_LeftShirtSleeve.setStroke(Color.rgb(102, 102, 102));
 		W_LeftShirtSleeve.setStrokeWidth(0.5);
 				
 		//--Left Hand--
-		W_LeftHand = new Rectangle(30, 684, 5, 10);
+		W_LeftHand = new Rectangle(5, 684, 5, 10);
 		W_LeftHand.setFill(skinColour);
 		W_LeftHand.setStroke(characterStroke);
 		W_LeftHand.setStrokeWidth(0.5);
 				
 		W_grpLHand.getChildren().addAll(W_LeftHand, W_LeftShirtSleeve);
+				
+		//--Right shirt sleeve--
+		W_RightShirtSleeve = new Rectangle(30, 676, 5, 10);
+		W_RightShirtSleeve.setFill(Color.rgb(148, 240, 117));
+		W_RightShirtSleeve.setStroke(characterStroke);
+		W_RightShirtSleeve.setStrokeWidth(0.5);
+				
+		//--Left Hand--
+		W_RightHand = new Rectangle(30, 684, 5, 10);
+		W_RightHand.setFill(skinColour);
+		W_RightHand.setStroke(characterStroke);
+		W_RightHand.setStrokeWidth(0.5);
+		
+		W_grpRHand.getChildren().addAll(W_RightHand, W_RightShirtSleeve);
 		
 //------Drawing Leg--------------------------------------------------------------
 		//--Right Leg--
@@ -126,7 +123,10 @@ public class moveUp extends Pane{
 						
 		W_grpLLeg.getChildren().addAll(W_LeftLeg);
 		
-		this.getChildren().addAll(W_grpRLeg, W_grpLLeg, W_grpBody, W_grpRHand, W_grpLHand, W_grpHead);
+		GarbageBagU = new Ellipse(7, 702, 7, 9);
+		GarbageBagU.setFill(Color.rgb(60, 60, 60));
+		
+		this.getChildren().addAll(W_grpRLeg, W_grpLLeg, W_grpBody, W_grpRHand, GarbageBagU, W_grpLHand, W_grpHead);
 	}
 	
 	public void moveUpAnimation() {

@@ -7,6 +7,7 @@ import javafx.scene.Group;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
@@ -20,6 +21,7 @@ public class moveDown extends Pane{
 	
 	//A being pressed 
 	Circle S_head, S_eye1, S_eye2;
+	Ellipse GarbageBagD;
 	Line S_maskLine1, S_maskLine2, S_vestLine1, S_vestLine2, S_vestLine3;
 	Rectangle S_capFrontPanel, S_capBill, S_mask, S_body, 
 				S_LeftHand, S_LeftShirtSleeve,
@@ -149,7 +151,10 @@ public class moveDown extends Pane{
 						
 		S_grpLLeg.getChildren().addAll(S_LeftLeg);
 		
-		this.getChildren().addAll(S_grpRLeg, S_grpLLeg, S_grpBody, S_grpRHand, S_grpLHand, S_grpHead);
+		GarbageBagD = new Ellipse(33, 702, 7, 9);
+		GarbageBagD.setFill(Color.rgb(60, 60, 60));
+		
+		this.getChildren().addAll(S_grpRLeg, S_grpLLeg, S_grpBody, S_grpRHand, GarbageBagD, S_grpLHand, S_grpHead);
 	}
 	
 	public void moveDownAnimation() {

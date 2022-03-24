@@ -11,16 +11,19 @@ public class Bottom extends Pane{
 		
 		Pane bottom = new Pane();
 		
+//------ Drawing grass ------------------------------------------------
 		Rectangle grassPlayground = new Rectangle(0, 710, 850, 300);
 		grassPlayground.setFill(Color.rgb(118, 213, 172));
-		
+
+//------ Drawing Walk Path --------------------------------------------
 		Rectangle path = new Rectangle(0, 670, 850, 40);
 		path.setFill(Color.rgb(237, 230, 222));
-		
+
+//------ Drawing Walk path and grass divider --------------------------	
 		Rectangle divider = new Rectangle(0, 710, 850, 5);
 		divider.setFill(Color.rgb(184, 153, 122));
 		
-		//BENCH 1
+//------ Drawing BENCH 1 ----------------------------------------------
 		Rectangle bench1 = new Rectangle(150, 685, 70, 20);
 		Rectangle b1Handle1 = new Rectangle(140, 690, 10, 20);
 		Rectangle b1Handle2 = new Rectangle(220, 690, 10, 20);
@@ -42,7 +45,7 @@ public class Bottom extends Pane{
 		
 		grpBench1.getChildren().addAll(b1Handle1, b1Handle2, bench1);	
 		
-		//BENCH 2
+//------ Drawing BENCH 2 ----------------------------------------------
 		Rectangle bench2 = new Rectangle(390, 685, 70, 20);
 		Rectangle b2Handle1 = new Rectangle(380, 690, 10, 20);
 		Rectangle b2Handle2 = new Rectangle(460, 690, 10, 20);
@@ -64,7 +67,7 @@ public class Bottom extends Pane{
 		
 		grpBench2.getChildren().addAll(b2Handle1, b2Handle2, bench2);
 		
-		//BENCH 3
+//------ Drawing BENCH 3 ----------------------------------------------
 		Rectangle bench3 = new Rectangle(630, 685, 70, 20);
 		Rectangle b3Handle1 = new Rectangle(620, 690, 10, 20);
 		Rectangle b3Handle2 = new Rectangle(700, 690, 10, 20);

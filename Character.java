@@ -16,6 +16,7 @@ public class Character extends Pane{
 	Color characterStroke = Color.rgb(105, 94, 79);
 
 	Circle head, eye1, eye2;
+	Ellipse GarbageBagC;
 	Rectangle capFrontPanel, capBill, mask, body, 
 				leftHand, leftShirtSleeve, rightHand, rightShirtSleeve, leftLeg, rightLeg;
 	Line maskLine1, maskLine2, vestLine1, vestLine2, vestLine3;
@@ -140,17 +141,9 @@ public class Character extends Pane{
 				
 		grpLLeg.getChildren().addAll(leftLeg);
 		
-		this.getChildren().addAll(grpRLeg, grpLLeg, grpBody, grpLHand, grpRHand, grpHead);
-	}
-	
-	public void moveLeft() {
+		GarbageBagC = new Ellipse(33, 702, 7, 9);
+		GarbageBagC.setFill(Color.rgb(60, 60, 60));
 		
-	}
-	
-	public void moveRight() {
-		Character character = new Character();
-		
-		character.getChildren().replaceAll((UnaryOperator<Node>) eye2);
-		character.getChildren().addAll(eye2);
+		this.getChildren().addAll(grpRLeg, grpLLeg, grpBody, GarbageBagC, grpLHand, grpRHand, grpHead);
 	}
 }

@@ -17,8 +17,8 @@ public class moveLeft extends Pane{
 	Color characterStroke = Color.rgb(110, 104, 89);
 	
 	//A being pressed 
-	Circle A_head, A_eye2;
-	Line A_maskLine1, A_vestLine1, A_vestLine2;
+	Circle A_head, A_eye2, GarbageBagL;
+	Line A_maskLine1, A_vestLine1, A_vestLine2, StickL;
 	Rectangle A_capFrontPanel, A_capBill, A_mask, A_body, 
 				A_LeftHand, A_LeftShirtSleeve,
 				A_RightHand, A_RightShirtSleeve;
@@ -141,63 +141,45 @@ public class moveLeft extends Pane{
 		A_rightLeg.setStroke(Color.rgb(155, 155, 155));
 		A_rightLeg.setStrokeWidth(0.5);
 		
-		this.getChildren().addAll(A_rightLeg, A_leftLeg, A_grpRHand, A_grpBody, A_grpLHand, A_grpHead);
+		GarbageBagL = new Circle(22, 701, 9);
+		GarbageBagL.setFill(Color.rgb(60, 60, 60));
+		
+		this.getChildren().addAll(A_rightLeg, A_leftLeg, A_grpRHand, A_grpBody, GarbageBagL, A_grpLHand, A_grpHead);
 	}
 	
 	public void moveLeftAnimation() {
 		if (leftLegForward == true) {
-			A_leftLeg.getPoints().remove(A_leftLeg.getPoints().size() - 2);
-			A_leftLeg.getPoints().remove(A_leftLeg.getPoints().size() - 2);
-			A_leftLeg.getPoints().remove(A_leftLeg.getPoints().size() - 2);
-			A_leftLeg.getPoints().remove(A_leftLeg.getPoints().size() - 2);
-			
+			A_leftLeg.getPoints().clear();				// Clear left Leg
 			A_leftLeg.getPoints().addAll(new Double[] {
 					13.0, 698.0,
 					5.0, 710.0,
 					12.0, 712.0,
 					24.0, 700.0
 			});
-			
-			A_rightLeg.getPoints().remove(A_rightLeg.getPoints().size() - 2);
-			A_rightLeg.getPoints().remove(A_rightLeg.getPoints().size() - 2);
-			A_rightLeg.getPoints().remove(A_rightLeg.getPoints().size() - 2);
-			A_rightLeg.getPoints().remove(A_rightLeg.getPoints().size() - 2);
-			
+			A_rightLeg.getPoints().clear();				// Clear Right Leg
 			A_rightLeg.getPoints().addAll(new Double[] {
 					15.0, 698.0,
 					23.0, 712.0,
 					29.0, 710.0,
 					30.0, 698.0
 			});
-			
 			leftLegForward = false;
 		} else {
-			A_leftLeg.getPoints().remove(A_leftLeg.getPoints().size() - 2);
-			A_leftLeg.getPoints().remove(A_leftLeg.getPoints().size() - 2);
-			A_leftLeg.getPoints().remove(A_leftLeg.getPoints().size() - 2);
-			A_leftLeg.getPoints().remove(A_leftLeg.getPoints().size() - 2);
-
+			A_leftLeg.getPoints().clear();				// Clear left Leg
 			A_leftLeg.getPoints().addAll(new Double[] {
 					15.0, 698.0,
 					29.0, 712.0,
 					35.0, 710.0,
 					30.0, 698.0
 			});
-			
-			A_rightLeg.getPoints().remove(A_rightLeg.getPoints().size() - 2);
-			A_rightLeg.getPoints().remove(A_rightLeg.getPoints().size() - 2);
-			A_rightLeg.getPoints().remove(A_rightLeg.getPoints().size() - 2);
-			A_rightLeg.getPoints().remove(A_rightLeg.getPoints().size() - 2);
-			
+			A_rightLeg.getPoints().clear();				// Clear Right Leg
 			A_rightLeg.getPoints().addAll(new Double[] {
 					13.0, 698.0,
 					0.0, 710.0,
 					6.0, 712.0,
 					24.0, 700.0
 			});
-			
 			leftLegForward = true;
 		}
 	}
-
 }

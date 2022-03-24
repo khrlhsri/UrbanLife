@@ -17,7 +17,7 @@ public class moveRight extends Pane{
 	Color characterStroke = Color.rgb(110, 104, 89);
 	
 	//A being pressed 
-	Circle D_head, D_eye;
+	Circle D_head, D_eye, GarbageBagR;
 	Line D_maskLine, D_vestLine1, D_vestLine2;
 	Rectangle D_capFrontPanel, D_capBill, D_mask, D_body, 
 				D_LeftHand, D_LeftShirtSleeve,
@@ -141,16 +141,15 @@ public class moveRight extends Pane{
 		D_rightLeg.setStroke(Color.rgb(155, 155, 155));
 		D_rightLeg.setStrokeWidth(0.5);
 		
-		this.getChildren().addAll(D_leftLeg, D_rightLeg, D_grpRHand, D_grpBody, D_grpLHand, D_grpHead);
+		GarbageBagR = new Circle(18, 701, 9);
+		GarbageBagR.setFill(Color.rgb(60, 60, 60));
+		
+		this.getChildren().addAll(GarbageBagR, D_leftLeg, D_rightLeg, D_grpRHand, D_grpBody, D_grpLHand, D_grpHead);
 	}
 	
 	public void moveRightAnimation() {
 		if (leftLegBackward == true) {
-			D_leftLeg.getPoints().remove(D_leftLeg.getPoints().size() - 2);
-			D_leftLeg.getPoints().remove(D_leftLeg.getPoints().size() - 2);
-			D_leftLeg.getPoints().remove(D_leftLeg.getPoints().size() - 2);
-			D_leftLeg.getPoints().remove(D_leftLeg.getPoints().size() - 2);
-			
+			D_leftLeg.getPoints().clear();
 			D_leftLeg.getPoints().addAll(new Double[] {
 					13.0, 698.0,
 					5.0, 710.0,
@@ -158,11 +157,7 @@ public class moveRight extends Pane{
 					24.0, 700.0
 			});
 			
-			D_rightLeg.getPoints().remove(D_rightLeg.getPoints().size() - 2);
-			D_rightLeg.getPoints().remove(D_rightLeg.getPoints().size() - 2);
-			D_rightLeg.getPoints().remove(D_rightLeg.getPoints().size() - 2);
-			D_rightLeg.getPoints().remove(D_rightLeg.getPoints().size() - 2);
-			
+			D_rightLeg.getPoints().clear();
 			D_rightLeg.getPoints().addAll(new Double[] {
 					15.0, 698.0,
 					23.0, 712.0,
@@ -172,11 +167,7 @@ public class moveRight extends Pane{
 			
 			leftLegBackward = false;
 		} else {
-			D_leftLeg.getPoints().remove(D_leftLeg.getPoints().size() - 2);
-			D_leftLeg.getPoints().remove(D_leftLeg.getPoints().size() - 2);
-			D_leftLeg.getPoints().remove(D_leftLeg.getPoints().size() - 2);
-			D_leftLeg.getPoints().remove(D_leftLeg.getPoints().size() - 2);
-
+			D_leftLeg.getPoints().clear();
 			D_leftLeg.getPoints().addAll(new Double[] {
 					15.0, 698.0,
 					29.0, 712.0,
@@ -184,18 +175,13 @@ public class moveRight extends Pane{
 					30.0, 698.0
 			});
 			
-			D_rightLeg.getPoints().remove(D_rightLeg.getPoints().size() - 2);
-			D_rightLeg.getPoints().remove(D_rightLeg.getPoints().size() - 2);
-			D_rightLeg.getPoints().remove(D_rightLeg.getPoints().size() - 2);
-			D_rightLeg.getPoints().remove(D_rightLeg.getPoints().size() - 2);
-			
+			D_rightLeg.getPoints().clear();
 			D_rightLeg.getPoints().addAll(new Double[] {
 					13.0, 698.0,
 					0.0, 710.0,
 					6.0, 712.0,
 					24.0, 700.0
 			});
-			
 			leftLegBackward = true;
 		}
 	}
